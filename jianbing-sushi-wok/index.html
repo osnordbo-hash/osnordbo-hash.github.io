@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jianbing &amp; Sushi Wok – Innspurten 12A, Oslo</title>
+<meta name="description" content="Jianbing &amp; Sushi Wok, restaurant i Innspurten 12A, 0663 Oslo.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0f1d18">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f1d18; --bg-2:#15271f; --rice:#f3efe4; --jade:#7fd1a8; --chili:#e8452c; --chili-2:#ff5b3f; --muted:#b9c4bd;
+  --line:rgba(243,239,228,.15);
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Outfit",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--rice);font:18px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--jade);outline-offset:3px}
+.demo{background:#000;color:#ddd;font-size:13px;text-align:center;padding:7px 14px}
+.hero{position:relative;overflow:hidden;min-height:min(84vh,740px);display:flex;flex-direction:column}
+.disc{position:absolute;right:-12vw;top:50%;transform:translateY(-50%);width:min(70vw,640px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 50%,transparent 0 30%,rgba(127,209,168,.10) 30% 31%,transparent 31% 46%,rgba(127,209,168,.10) 46% 47%,transparent 47% 62%,rgba(127,209,168,.10) 62% 63%,transparent 63%);
+  border:2px solid rgba(127,209,168,.25)}
+.chop{position:absolute;right:clamp(30px,10vw,160px);top:12%;width:10px;height:62%;border-radius:6px;background:var(--chili);transform:rotate(18deg);opacity:.85}
+.chop.b{right:clamp(54px,13vw,200px);transform:rotate(24deg);background:var(--chili-2);opacity:.6}
+.bar{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:20px clamp(18px,4vw,48px);font-weight:500;font-size:18px}
+.bar a{text-decoration:none}
+.hero-in{position:relative;z-index:2;margin:auto 0;padding:30px clamp(18px,4vw,48px) clamp(70px,12vh,130px);max-width:980px}
+h1{font:800 clamp(64px,13vw,168px)/.86 var(--display);margin:0;letter-spacing:-.03em}
+h1 .amp{color:var(--chili-2)}
+h1 .s{display:block;color:var(--jade)}
+.lede{font:500 clamp(21px,2.4vw,27px)/1.35 var(--body);margin:26px 0 0;max-width:28ch}
+.call{display:inline-block;margin-top:30px;background:var(--chili);color:#fff;text-decoration:none;font-weight:600;padding:15px 28px;border-radius:999px;font-size:18px;transition:transform .15s,background .15s}
+.call:hover{background:var(--chili-2);transform:translateY(-1px)}
+.call:active{transform:translateY(1px)}
+section{padding:clamp(56px,8vw,100px) clamp(18px,5vw,64px);border-top:1px solid var(--line)}
+.wrap{max-width:1120px;margin:0 auto}
+h2{font:800 clamp(40px,6vw,72px)/1 var(--display);margin:0 0 24px;letter-spacing:-.02em}
+.info{background:var(--bg-2)}
+.info .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(30px,6vw,80px);align-items:start}
+.big{font:600 clamp(26px,3vw,34px)/1.25 var(--display);margin:0 0 14px}
+.big a{text-decoration:none;border-bottom:3px solid var(--chili)}
+.note{color:var(--muted);font-size:17px;margin:20px 0 0;max-width:36ch}
+.map{aspect-ratio:16/11;overflow:hidden;border-radius:14px;border:1px solid var(--line)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+footer{border-top:1px solid var(--line);padding:26px clamp(18px,5vw,64px);color:var(--muted);font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.sticky{display:none}
+@media(max-width:820px){
+  .info .wrap{grid-template-columns:1fr}
+  .hero-in .call{display:none}
+  .disc{right:-40vw;width:95vw;opacity:.7}
+  .chop{right:22px}.chop.b{right:44px}
+  .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;text-align:center;margin:0;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+  body{padding-bottom:80px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo">Demo</div>
+<header class="hero">
+  <div class="disc" aria-hidden="true"></div>
+  <div class="chop" aria-hidden="true"></div><div class="chop b" aria-hidden="true"></div>
+  <div class="bar"><span>Innspurten 12A, Oslo</span><a href="tel:+4790261388">902 61 388</a></div>
+  <div class="hero-in">
+    <h1>Jianbing <span class="amp">&amp;</span><span class="s">Sushi Wok</span></h1>
+    <p class="lede">Restaurant i Innspurten 12A, Oslo.</p>
+    <a class="call" href="tel:+4790261388">Ring 902 61 388</a>
+  </div>
+</header>
+<section class="info">
+  <div class="wrap">
+    <div>
+      <h2>Finn oss</h2>
+      <p class="big">Innspurten 12A<br>0663 Oslo</p>
+      <p class="big"><a href="tel:+4790261388">902 61 388</a></p>
+      <p class="note">Her kan dere legge inn meny, åpningstider og bilder av maten.</p>
+    </div>
+    <div class="map"><iframe title="Kart: Innspurten 12A, Oslo" loading="lazy" src="https://www.google.com/maps?q=Innspurten+12A,+0663+Oslo&output=embed"></iframe></div>
+  </div>
+</section>
+<footer><span>Jianbing &amp; Sushi Wok · Innspurten 12A, 0663 Oslo</span><span>YKZ AS · org.nr. 935 968 119</span></footer>
+<a class="call sticky" href="tel:+4790261388">Ring 902 61 388</a>
+</body>
+</html>
