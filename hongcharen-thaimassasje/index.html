@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hongcharen Thaimassasje – Bøgata 10A, Oslo</title>
+<meta name="description" content="Hongcharen Thaimassasje i Bøgata 10A, 0655 Oslo. Ring 94 19 63 53.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#173b34">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --jade:#173b34; --jade-2:#1f4c43; --leaf:#7fc8a9; --sun:#f2b84b; --paper:#f4f1ea; --ink:#11211d; --mist:#c9dcd4;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --body:"Instrument Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--jade);color:var(--paper);font:18px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.demo{background:#0b1714;color:#ddd;font-size:13px;text-align:center;padding:7px 14px}
+.hero{position:relative;overflow:hidden;min-height:min(84vh,740px);display:flex;flex-direction:column}
+.petal{position:absolute;border-radius:100% 0 100% 0;background:var(--jade-2)}
+.p1{width:min(62vw,560px);aspect-ratio:1;right:-8vw;top:-6vw;transform:rotate(12deg)}
+.p2{width:min(36vw,320px);aspect-ratio:1;right:16vw;bottom:-6vw;transform:rotate(-30deg);background:#245a4f}
+.p3{width:min(16vw,140px);aspect-ratio:1;right:6vw;bottom:18%;background:var(--sun);opacity:.9;transform:rotate(45deg)}
+.bar{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:20px clamp(18px,4vw,48px);font-weight:600;font-size:18px}
+.bar a{text-decoration:none}
+.hero-in{position:relative;z-index:2;margin:auto 0;padding:30px clamp(18px,4vw,48px) clamp(70px,12vh,130px);max-width:880px}
+h1{font:800 clamp(58px,11vw,140px)/.9 var(--display);margin:0;letter-spacing:-.02em}
+h1 span{display:block;color:var(--leaf);font-weight:600;font-size:.5em;letter-spacing:0;margin-top:.2em}
+.lede{font:500 clamp(21px,2.4vw,26px)/1.4 var(--body);margin:26px 0 0;max-width:28ch}
+.call{display:inline-block;margin-top:30px;background:var(--sun);color:var(--ink);text-decoration:none;font-weight:600;padding:15px 28px;border-radius:40px;font-size:18px;transition:transform .15s,background .15s}
+.call:hover{background:#f7c869;transform:translateY(-1px)}
+.call:active{transform:translateY(1px)}
+section{padding:clamp(56px,8vw,100px) clamp(18px,5vw,64px);background:var(--paper);color:var(--ink)}
+.wrap{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(30px,6vw,80px);align-items:start}
+h2{font:800 clamp(40px,6vw,64px)/1 var(--display);margin:0 0 24px;letter-spacing:-.01em}
+.big{font:600 clamp(24px,2.8vw,32px)/1.3 var(--display);margin:0 0 14px}
+.big a{text-decoration:none;border-bottom:3px solid var(--sun)}
+.note{color:#3d554e;font-size:17px;margin:20px 0 0;max-width:36ch}
+.map{aspect-ratio:16/11;overflow:hidden;border-radius:18px}
+.map iframe{width:100%;height:100%;border:0;display:block}
+footer{padding:26px clamp(18px,5vw,64px);color:var(--mist);font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.sticky{display:none}
+@media(max-width:820px){
+  .wrap{grid-template-columns:1fr}
+  .hero-in .call{display:none}
+  .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;text-align:center;margin:0;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+  body{padding-bottom:80px}
+  .p1{width:80vw;right:-30vw}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo</div>
+<header class="hero">
+  <div class="petal p1" aria-hidden="true"></div><div class="petal p2" aria-hidden="true"></div><div class="petal p3" aria-hidden="true"></div>
+  <div class="bar"><span>Bøgata 10A, Oslo</span><a href="tel:+4794196353">94 19 63 53</a></div>
+  <div class="hero-in">
+    <h1>Hongcharen<span>Thaimassasje</span></h1>
+    <p class="lede">Thaimassasje i Bøgata 10A, Oslo.</p>
+    <a class="call" href="tel:+4794196353">Ring 94 19 63 53</a>
+  </div>
+</header>
+<section>
+  <div class="wrap">
+    <div>
+      <h2>Finn oss</h2>
+      <p class="big">Bøgata 10A<br>0655 Oslo</p>
+      <p class="big"><a href="tel:+4794196353">94 19 63 53</a></p>
+      <p class="note">Her kan dere legge inn åpningstider, behandlinger, priser og bilder.</p>
+    </div>
+    <div class="map"><iframe title="Kart: Bøgata 10A, Oslo" loading="lazy" src="https://www.google.com/maps?q=B%C3%B8gata+10A,+0655+Oslo&output=embed"></iframe></div>
+  </div>
+</section>
+<footer><span>Hongcharen Thaimassasje · Bøgata 10A, 0655 Oslo</span><span>Hongcharen Thaimassasje Thatsani Hongsomdi Fossheim · org.nr. 915 815 405</span></footer>
+<a class="call sticky" href="tel:+4794196353">Ring 94 19 63 53</a>
+</body>
+</html>
