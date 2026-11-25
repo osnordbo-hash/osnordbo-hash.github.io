@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Afghan House – Grønland 18, Oslo</title>
+<meta name="description" content="Afghan House, Grønland 18, 0188 Oslo. Autentisk og lokalt. Bestill på Wolt eller ring 969 57 130.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#2b1413">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#2b1413; --maroon-2:#3d1d1b; --gold:#e2b04a; --gold-2:#f0c868; --cream:#f7f1e6; --ink:#1c0d0c;
+  --flag-r:#d32f2f; --flag-g:#2e9b4f; --sand:#e9dcc6; --muted:#6a514c;
+  --display:"Saira",system-ui,sans-serif; --body:"Figtree",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:18px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.demo{background:#000;color:#ddd;font-size:13px;text-align:center;padding:7px 14px}
+.flag{height:6px;background:linear-gradient(90deg,#111 0 33.3%,var(--flag-r) 33.3% 66.6%,var(--flag-g) 66.6%)}
+
+.hero{position:relative;min-height:min(88vh,780px);display:flex;flex-direction:column;color:#fff;overflow:hidden;background:var(--maroon)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,10,9,.92) 0%,rgba(28,10,9,.78) 42%,rgba(28,10,9,.15) 80%),linear-gradient(0deg,rgba(28,10,9,.7),transparent 45%)}
+.bar{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:18px clamp(18px,4vw,48px);font-weight:600;font-size:18px}
+.bar a{text-decoration:none}
+.hero-in{position:relative;z-index:2;margin:auto 0;padding:24px clamp(18px,4vw,48px) clamp(60px,10vh,110px);max-width:760px}
+.logo{width:96px;height:96px;border-radius:12px;border:2px solid var(--gold);margin-bottom:24px}
+h1{font:800 clamp(56px,10vw,128px)/.92 var(--display);margin:0;letter-spacing:-.01em;text-transform:uppercase}
+h1 span{color:var(--gold)}
+.lede{font:500 clamp(22px,2.6vw,30px)/1.35 var(--body);margin:20px 0 0}
+.lede small{display:block;font-size:.7em;color:var(--sand);margin-top:6px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:18px;padding:15px 26px;border-radius:8px;transition:transform .15s,background .15s}
+.btn:active{transform:translateY(1px)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-line{border:2px solid rgba(255,255,255,.7);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+
+section{padding:clamp(56px,8vw,100px) clamp(18px,5vw,64px)}
+.wrap{max-width:1180px;margin:0 auto}
+h2{font:800 clamp(36px,5.5vw,60px)/1 var(--display);margin:0 0 14px;text-transform:uppercase;letter-spacing:-.005em}
+.intro{font-size:20px;color:var(--muted);margin:0 0 36px;max-width:52ch}
+
+.dishes{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.dish{margin:0;background:#fff;border-radius:10px;overflow:hidden}
+.dish img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.dish figcaption{padding:12px 16px 14px;font:700 21px/1.25 var(--display)}
+.dish:nth-child(1),.dish:nth-child(2){grid-column:span 3}
+.dish:nth-child(n+3){grid-column:span 2}
+
+.menu{background:var(--maroon);color:var(--cream)}
+.menu h2{color:var(--gold)}
+.menu .intro{color:var(--sand)}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 48px}
+.cat h3{font:700 22px/1.2 var(--display);margin:0 0 10px;padding-bottom:8px;border-bottom:2px solid rgba(226,176,74,.5);text-transform:uppercase;color:var(--gold)}
+.cat ul{list-style:none;margin:0;padding:0}
+.cat li{padding:5px 0;font-size:18px}
+.menu .btn{margin-top:40px}
+
+.info .wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(30px,6vw,80px);align-items:start}
+.big{font:700 clamp(24px,2.8vw,32px)/1.3 var(--display);margin:0 0 12px}
+.big a{text-decoration:none;border-bottom:3px solid var(--gold)}
+.hours{margin:22px 0 0;font-size:18px}
+.hours b{display:block;font-weight:600}
+.note{color:var(--muted);font-size:17px;margin:14px 0 0;max-width:38ch}
+.map{aspect-ratio:16/11;overflow:hidden;border-radius:10px}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+footer{background:var(--ink);color:var(--sand);padding:26px clamp(18px,5vw,64px) 30px;font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.sticky{display:none}
+@media(max-width:900px){
+  .dishes{grid-template-columns:1fr 1fr}
+  .dish:nth-child(n){grid-column:auto}
+  .dish:nth-child(1){grid-column:span 2}
+  .cols{grid-template-columns:1fr 1fr}
+  .info .wrap{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hero::after{background:linear-gradient(0deg,rgba(28,10,9,.95) 0%,rgba(28,10,9,.8) 55%,rgba(28,10,9,.45) 100%)}
+  .hero-in .btns{display:none}
+  .cols{grid-template-columns:1fr}
+  .dish figcaption{font-size:18px}
+  .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+  body{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo</div>
+<div class="flag" aria-hidden="true"></div>
+
+<header class="hero">
+  <img src="img/01.jpg" alt="Retter fra Afghan House: kebab, brød, ris og sauser">
+  <div class="bar"><span>Grønland 18, Oslo</span><a href="tel:+4796957130">969 57 130</a></div>
+  <div class="hero-in">
+    <img class="logo" src="img/02.jpg" alt="Logoen til Afghan House">
+    <h1>Afghan <span>House</span></h1>
+    <p class="lede">Autentisk og lokalt.<small>Afghan national mat · Grønland 18, Oslo</small></p>
+    <div class="btns">
+      <a class="btn btn-gold" href="https://wolt.com/nb/nor/oslo/restaurant/afghan-house">Bestill på Wolt</a>
+      <a class="btn btn-line" href="tel:+4796957130">Ring 969 57 130</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Autentiske retter fra Afghanistan</h2>
+    <p class="intro">Noen av rettene på menyen.</p>
+    <div class="dishes">
+      <figure class="dish"><img src="img/03.jpg" alt="Machicha Qabuli Palow" loading="lazy"><figcaption>Machicha Qabuli Palow</figcaption></figure>
+      <figure class="dish"><img src="img/06.jpg" alt="Lam Korma" loading="lazy"><figcaption>Lam Korma</figcaption></figure>
+      <figure class="dish"><img src="img/04.jpg" alt="Chapli Kebab" loading="lazy"><figcaption>Chapli Kebab</figcaption></figure>
+      <figure class="dish"><img src="img/05.jpg" alt="Bolani" loading="lazy"><figcaption>Bolani</figcaption></figure>
+      <figure class="dish"><img src="img/07.jpg" alt="Biryani" loading="lazy"><figcaption>Biryani</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="wrap">
+    <h2>Meny</h2>
+    <p class="intro">Hele menyen med priser finner du på Wolt.</p>
+    <div class="cols">
+      <div class="cat"><h3>Dagens retter</h3><ul><li>Cholay</li><li>Borani Banjan</li><li>Channa Dal</li></ul></div>
+      <div class="cat"><h3>Forretter</h3><ul><li>Bolani</li><li>Ashak</li><li>Mantu</li><li>Afghan Burger</li></ul></div>
+      <div class="cat"><h3>Hovedretter</h3><ul><li>Machicha Qabuli Palow</li><li>Biryani</li><li>Lam Korma</li><li>Channa Ghost</li><li>Lobiya Karahi</li></ul></div>
+      <div class="cat"><h3>Grillretter</h3><ul><li>Chapli Kebab</li><li>Lam Tikka</li><li>Lam Chops</li><li>Mix</li><li>Kylling Tikka</li><li>Seekh Kebab</li></ul></div>
+      <div class="cat"><h3>Meal deals</h3><ul><li>Mahicha Qabuli Palow &amp; Mix Grill</li><li>Lam Charsi Karahi</li></ul></div>
+      <div class="cat"><h3>Barnemeny</h3><ul><li>Pommes Frites m/ Kylling Nuggets</li></ul></div>
+    </div>
+    <a class="btn btn-gold" href="https://wolt.com/nb/nor/oslo/restaurant/afghan-house">Se menyen på Wolt</a>
+  </div>
+</section>
+
+<section class="info">
+  <div class="wrap">
+    <div>
+      <h2>Finn oss</h2>
+      <p class="big">Grønland 18<br>0188 Oslo</p>
+      <p class="big"><a href="tel:+4796957130">969 57 130</a></p>
+      <p class="hours"><b>Levering på Wolt</b>Mandag–søndag 13:00–22:45</p>
+      <p class="note">Her kan dere legge inn åpningstidene i lokalet.</p>
+    </div>
+    <div class="map"><iframe title="Kart: Grønland 18, Oslo" loading="lazy" src="https://www.google.com/maps?q=Gr%C3%B8nland+18,+0188+Oslo&output=embed"></iframe></div>
+  </div>
+</section>
+
+<footer><span>Afghan House · Grønland 18, 0188 Oslo</span><span>Afghan House AS · org.nr. 936 581 692</span></footer>
+<a class="btn btn-gold sticky" href="https://wolt.com/nb/nor/oslo/restaurant/afghan-house">Bestill på Wolt</a>
+</body>
+</html>
