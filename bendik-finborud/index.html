@@ -12,12 +12,13 @@
 <style>
 :root{--ink:#14110d;--ink2:#1d1914;--paper:#efe7d8;--muted:#c9bda8;--ochre:#d29a3a;--umber:#5a3a22}
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--paper);font:500 18px/1.65 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .demo{background:#000;color:#cfc6b6;font-size:13px;text-align:center;padding:7px 14px}
 nav{position:absolute;top:34px;left:0;right:0;z-index:3;display:flex;justify-content:flex-end;gap:26px;padding:16px clamp(20px,5vw,64px);font-weight:600;font-size:15px}
-nav a{text-decoration:none;color:var(--paper);opacity:.92}
+nav a{text-decoration:none;color:var(--paper);opacity:.92;display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
 nav a:hover{color:var(--ochre)}
 .hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:flex-end;background:#2a2a2a url(img/hero.jpg) 72% center/cover no-repeat;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,10,.88) 0%,rgba(14,12,10,.62) 38%,rgba(14,12,10,0) 62%),linear-gradient(0deg,rgba(14,12,10,.85) 0%,rgba(14,12,10,0) 45%)}
@@ -49,10 +50,31 @@ h2{font:500 clamp(40px,5vw,60px)/1 "Fraunces",Georgia,serif;margin-bottom:34px;c
 .contact .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:36px;align-items:flex-end}
 .contact h2{margin-bottom:14px}
 .contact p{color:#eadfcb;max-width:34ch}
-.mail{font:500 clamp(26px,3.4vw,40px)/1.1 "Fraunces",Georgia,serif;color:#fff;text-decoration-color:var(--ochre);text-underline-offset:6px;word-break:break-all}
+.mail{font:500 clamp(26px,3.4vw,40px)/1.1 "Fraunces",Georgia,serif;color:#fff;text-decoration-color:var(--ochre);text-underline-offset:6px;word-break:break-all;display:inline-block;padding:8px 0}
 .social{display:flex;gap:22px;margin-top:20px;font-weight:700}
-.social a{text-decoration:none;border-bottom:2px solid var(--ochre);padding-bottom:2px}
+.social a{text-decoration:none;display:inline-flex;align-items:center;min-height:44px;background:linear-gradient(var(--ochre),var(--ochre)) left 34px/100% 2px no-repeat}
 footer{padding:28px clamp(20px,5vw,64px);color:var(--muted);font-size:14px;text-align:center}
+#konserter{padding-top:clamp(56px,7vw,90px);padding-bottom:clamp(56px,7vw,90px)}
+.gig{display:grid;grid-template-columns:110px 1fr auto;gap:22px;align-items:center;padding:22px 0;border-top:1px solid #3a3128}
+.gig:last-child{border-bottom:1px solid #3a3128}
+.gig-hidden{display:none}
+.gig-date b{display:block;font:500 44px/1 "Fraunces",Georgia,serif;color:#fff}
+.gig-date span{color:var(--ochre);font-weight:700;text-transform:capitalize}
+.gig-where b{display:block;font-size:21px;color:#fff}
+.gig-where span,.gig-where small,.gig-dist{display:block;color:var(--muted);font-size:15px;font-style:normal}
+.gig-near{background:rgba(210,154,58,.08)}
+.gig-act{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:flex-end}
+.gig-act a,.gig-act button{background:none;border:0;color:var(--paper);font:700 15px Manrope,sans-serif;cursor:pointer;text-decoration:underline;text-decoration-color:#6b5d4c;text-decoration-thickness:2px;text-underline-offset:5px;min-height:44px;display:inline-flex;align-items:center}
+.gig-act .gig-main{background:var(--ochre);color:#1a1208;border:0;border-radius:999px;padding:0 20px;text-decoration:none}
+.gig-tools{display:flex;gap:16px;align-items:center;margin:-10px 0 26px}
+.gig-tools button{background:none;border:2px solid #6b5d4c;color:#fff;border-radius:999px;padding:0 18px;min-height:44px;font:700 15px Manrope,sans-serif;cursor:pointer}
+#gigEmpty{color:var(--muted);font-size:19px;padding:26px 0;border-top:1px solid #3a3128;border-bottom:1px solid #3a3128}
+#gigMap{height:340px;border-radius:10px;margin-top:30px}
+#gigMap .leaflet-tile-pane{filter:grayscale(1) invert(.92) contrast(.9) brightness(.9)}
+#konserter{--gig-accent:#d29a3a}
+.demo-note{margin-top:30px;border:1px dashed #8a6a3a;border-radius:10px;padding:18px 20px;background:rgba(210,154,58,.07);font-size:16px;color:#eadfcb;max-width:720px}
+.demo-note b{color:var(--ochre)}
+@media (max-width:760px){.gig{grid-template-columns:64px 1fr;gap:14px}.gig-act{grid-column:1/-1;justify-content:flex-start}.gig-date b{font-size:34px}}
 .bar{display:none}
 @media (max-width:760px){
  nav{gap:18px;font-size:14px;justify-content:center}
@@ -60,7 +82,8 @@ footer{padding:28px clamp(20px,5vw,64px);color:var(--muted);font-size:14px;text-
  .hero::before{background:linear-gradient(0deg,rgba(14,12,10,.94) 0%,rgba(14,12,10,.7) 40%,rgba(14,12,10,.1) 75%)}
  .rel{grid-template-columns:repeat(2,1fr);gap:26px 16px}
  .listen iframe{height:380px}
- .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(20,17,13,.96);border-top:1px solid #3a3128}
+ .bar.vis{transform:none}
+ .bar{transform:translateY(110%);transition:transform .25s;display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(20,17,13,.96);border-top:1px solid #3a3128}
  .bar a{flex:1;text-align:center;padding:12px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none}
  body{padding-bottom:72px}
 }
@@ -68,7 +91,7 @@ footer{padding:28px clamp(20px,5vw,64px);color:var(--muted);font-size:14px;text-
 </head>
 <body>
 <div class="demo">Demo</div>
-<nav><a href="#listen">Listen</a><a href="#releases">Releases</a><a href="#contact">Contact</a></nav>
+<nav><a href="#konserter">Shows</a><a href="#listen">Listen</a><a href="#releases">Releases</a><a href="#contact">Contact</a></nav>
 
 <header class="hero">
   <div class="hero-in">
@@ -80,6 +103,18 @@ footer{padding:28px clamp(20px,5vw,64px);color:var(--muted);font-size:14px;text-
     </div>
   </div>
 </header>
+
+<section id="konserter" data-lang="en">
+  <div class="wrap">
+    <h2>Shows</h2>
+    <div class="gig-tools"><button id="locateBtn" type="button" hidden>Find the show nearest you</button><span id="locateMsg"></span></div>
+    <div id="gigList"></div>
+    <p id="gigEmpty" hidden>No upcoming shows right now.</p>
+    <button id="gigMore" type="button" class="btn btn-ghost" hidden style="margin-top:22px;background:none;cursor:pointer"></button>
+    <div id="gigMap" hidden></div>
+    <p class="demo-note"><b>Slik funker konsertlista:</b> du fyller inn én rad per konsert i et regneark (dato, sted, by og billettlenke). Så dukker konserten opp her av seg selv, med billettknapp, kart, «legg til i kalender» og «finn nærmeste konsert». Gamle konserter forsvinner automatisk.</p>
+  </div>
+</section>
 
 <section>
   <div class="wrap about">
@@ -128,5 +163,9 @@ footer{padding:28px clamp(20px,5vw,64px);color:var(--muted);font-size:14px;text-
 <footer>© Bendik Finborud</footer>
 
 <div class="bar"><a class="btn-main" href="https://open.spotify.com/artist/0d1PtxYGqzU77E3HkEbN0Y" target="_blank" rel="noopener">Listen</a><a class="btn-ghost" href="#contact" style="border:2px solid #6b5d4c;color:#fff">Booking</a></div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="konserter.js"></script>
+<script>(function(){var b=document.querySelector('.bar'),h=document.querySelector('.hero');addEventListener('scroll',function(){b.classList.toggle('vis',scrollY>h.offsetHeight-80)},{passive:true})})()</script>
 </body>
 </html>
