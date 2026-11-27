@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>DJ Fax</title>
+<meta name="description" content="DJ Fax – Fredrik Våland">
+<meta property="og:title" content="DJ Fax">
+<meta property="og:image" content="img/dj-fax-og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --natt:#0f1a14;      /* dyp granskog */
+  --gran:#1f4a33;      /* grønn som DJ-pulten */
+  --papir:#f3efe4;     /* faxpapir */
+  --rod:#d23a2e;       /* nisselue */
+  --gull:#e8b44c;      /* bjeller */
+  --tekst:#f3efe4;
+  --dempet:#b9c4bb;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--natt);color:var(--tekst);font:400 18px/1.6 Figtree,system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+.demo{background:var(--gull);color:#1a1406;text-align:center;font:600 13px/1 Figtree,sans-serif;letter-spacing:.08em;padding:8px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px clamp(20px,5vw,56px)}
+.merke{font:800 22px/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.01em;text-decoration:none}
+nav{display:flex;gap:4px}
+nav a{font-weight:600;font-size:16px;text-decoration:none;padding:10px 14px;border-radius:999px;color:var(--dempet)}
+nav a[aria-current="page"]{background:var(--papir);color:var(--natt)}
+nav a:hover{color:var(--tekst)}
+nav a:focus-visible{outline:2px solid var(--gull);outline-offset:2px}
+main{flex:1;padding:0 clamp(20px,5vw,56px) 48px}
+section[hidden]{display:none}
+
+/* Forside */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:center;min-height:calc(100vh - 160px);max-width:1200px;margin:0 auto}
+.tittel{font:800 clamp(72px,13vw,184px)/.86 "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;margin:0}
+.tittel span{display:block;color:var(--rod)}
+.linje{height:6px;max-width:420px;margin:28px 0;background:repeating-linear-gradient(90deg,var(--papir) 0 18px,transparent 18px 26px)}
+.knapp{display:inline-block;background:var(--rod);color:#fff;font-weight:600;text-decoration:none;padding:14px 26px;border-radius:999px}
+.knapp:focus-visible{outline:2px solid var(--gull);outline-offset:3px}
+.bilde{margin:0;position:relative}
+.bilde img{display:block;width:100%;height:auto;max-height:82vh;object-fit:cover;object-position:50% 30%;border-radius:22px;box-shadow:0 0 0 10px var(--gran)}
+
+/* Om meg / Kontakt */
+.side{max-width:720px;margin:6vh auto 0}
+.side h1{font:800 clamp(44px,7vw,80px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:0 0 28px}
+.kort{background:var(--papir);color:var(--natt);border-radius:22px;padding:clamp(24px,4vw,40px)}
+.kort p{margin:0 0 6px}
+.navn{font:800 clamp(28px,4vw,38px)/1.1 "Bricolage Grotesque",sans-serif;margin-bottom:18px!important}
+.kort dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 24px;font-size:20px}
+.kort dt{font-weight:600;color:var(--gran);white-space:nowrap}
+.kort dd{overflow-wrap:anywhere}
+.kort dd{margin:0}
+.kort a{color:var(--natt);text-underline-offset:3px}
+footer{padding:20px clamp(20px,5vw,56px);color:var(--dempet);font-size:14px}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;min-height:0;padding-top:8px}
+  .bilde{order:-1}
+  .bilde img{max-height:62vh}
+  .linje{margin:22px 0}
+  header{flex-wrap:wrap}
+  nav a{padding:10px 12px}
+  .kort dl{font-size:17px;gap:10px 16px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .tittel{animation:inn .7s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes inn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo</div>
+<header>
+  <a class="merke" href="#forside">DJ Fax</a>
+  <nav aria-label="Hovedmeny">
+    <a href="#forside">Forside</a>
+    <a href="#om-meg">Om meg</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+<main>
+  <section id="forside" aria-label="Forside">
+    <div class="hero">
+      <div>
+        <h1 class="tittel">DJ<span>Fax</span></h1>
+        <div class="linje" aria-hidden="true"></div>
+        <a class="knapp" href="#kontakt">Kontakt</a>
+      </div>
+      <figure class="bilde">
+        <img src="img/dj-fax.jpg" alt="DJ Fax bak en julepyntet DJ-pult" width="1050" height="1400">
+      </figure>
+    </div>
+  </section>
+
+  <section id="om-meg" aria-label="Om meg" hidden>
+    <div class="side">
+      <h1>Om meg</h1>
+      <div class="kort">
+        <p>Jeg jobber som teknisk tegner</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" aria-label="Kontakt" hidden>
+    <div class="side">
+      <h1>Kontakt</h1>
+      <div class="kort">
+        <p class="navn">Fredrik Våland</p>
+        <dl>
+          <dt>Tlf.</dt><dd><a href="tel:+4747381194">473 81 194</a></dd>
+          <dt>E-post</dt><dd><a href="mailto:kontaktfredrik@proton.me">kontaktfredrik@proton.me</a></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© DJ Fax</footer>
+<script>
+(function(){
+  var ids=['forside','om-meg','kontakt'];
+  function vis(){
+    var id=(location.hash||'#forside').slice(1); if(ids.indexOf(id)<0) id='forside';
+    ids.forEach(function(x){document.getElementById(x).hidden=(x!==id)});
+    document.querySelectorAll('nav a').forEach(function(a){
+      if(a.getAttribute('href')==='#'+id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange',vis); vis();
+})();
+</script>
+</body>
+</html>
