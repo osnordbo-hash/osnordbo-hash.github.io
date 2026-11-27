@@ -22,11 +22,17 @@ img{display:block;max-width:100%}
 
 .bar{position:sticky;top:0;z-index:20;background:#fff;padding:14px 24px;display:flex;justify-content:center}
 .bar.skygge{box-shadow:0 1px 0 var(--line)}
-.meny{display:flex;gap:clamp(22px,4vw,44px)}
+.meny{display:flex;flex-wrap:wrap;justify-content:center;column-gap:clamp(14px,3.4vw,40px)}
 .meny a{font-size:12px;font-weight:500;padding:12px 2px 8px;border-bottom:2px solid transparent;min-height:44px;display:inline-flex;align-items:center}
 .meny a:hover,.meny a[aria-current="page"]{border-color:var(--ink)}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
+.burger{display:none;width:48px;height:44px;background:none;border:0;cursor:pointer;position:relative}
+.burger span{position:absolute;left:8px;right:8px;height:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:28px}
+.apen .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.apen .burger span:nth-child(2){opacity:0}
+.apen .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 section[hidden]{display:none}
 
 .hero{height:calc(100svh - 104px);min-height:460px;overflow:hidden;background:#f2f2f2}
@@ -42,6 +48,10 @@ section[hidden]{display:none}
 .bilder img{width:100%;height:clamp(320px,42vw,560px);object-fit:cover}
 .bilder .dj{object-position:50% 25%}
 
+.side{max-width:1100px;margin:0 auto;padding:clamp(48px,8vw,96px) 24px 0;text-align:center}
+.side h1{font-size:clamp(30px,7.5vw,80px);font-weight:500;font-stretch:125%;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.side .tekst{margin:28px auto 0;max-width:34em;color:#333;font-size:20px}
+.sidebilde{margin:clamp(40px,6vw,64px) auto 0;width:100%;height:auto;max-width:900px;aspect-ratio:3/2;object-fit:cover}
 .knapper{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:34px}
 .knapp{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 30px;border:1px solid var(--ink);background:none;color:var(--ink);font:inherit;font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.16em;cursor:pointer;transition:background .2s,color .2s}
 .knapp:hover{background:var(--ink);color:#fff}
@@ -50,7 +60,7 @@ section[hidden]{display:none}
 .knapp:disabled{opacity:.6;cursor:default}
 
 .kontakt{max-width:1100px;margin:0 auto;padding:clamp(48px,8vw,96px) 24px 0}
-.kontakt h1{text-align:center;font-size:clamp(44px,7vw,80px);font-weight:500;font-stretch:125%;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.kontakt h1{text-align:center;font-size:clamp(30px,7.5vw,80px);font-weight:500;font-stretch:125%;letter-spacing:.06em;text-transform:uppercase;line-height:1}
 .k-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(32px,6vw,88px);margin-top:clamp(40px,6vw,72px);align-items:start}
 .k-info h2{font-size:22px;font-weight:500;font-stretch:115%;letter-spacing:.04em}
 .k-info dl{margin-top:22px;display:grid;gap:18px}
@@ -77,6 +87,11 @@ form .knapp{justify-self:start}
 footer{margin-top:clamp(72px,10vw,120px);border-top:1px solid var(--line);padding:28px 24px;text-align:center;color:var(--mut);font-size:11px;font-weight:500}
 
 @media (max-width:760px){
+  .bar{padding:8px 12px}
+  .burger{display:block}
+  .meny{display:none;position:fixed;inset:var(--topp,92px) 0 0 0;background:#fff;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:8vh;gap:6px;z-index:30}
+  .apen .meny{display:flex}
+  .meny a{font-size:22px;letter-spacing:.12em;padding:12px 4px}
   .hero{height:auto;aspect-ratio:3/4;min-height:0}
   .bilder{grid-template-columns:1fr}
   .bilder img{height:auto;aspect-ratio:4/5}
@@ -90,9 +105,13 @@ footer{margin-top:clamp(72px,10vw,120px);border-top:1px solid var(--line);paddin
 <div class="demo up">Demo</div>
 
 <header class="bar" id="bar">
-  <nav class="meny up" aria-label="Hovedmeny">
+  <button class="burger" id="burger" aria-label="Åpne meny" aria-expanded="false" aria-controls="meny"><span></span><span></span><span></span></button>
+  <nav class="meny up" id="meny" aria-label="Hovedmeny">
     <a href="#forside">Forside</a>
-    <a href="#kontakt">Kontakt</a>
+    <a href="#om-meg">Om meg</a>
+    <a href="#prosjekter">Prosjekter</a>
+    <a href="#bilder">Bilder</a>
+    <a href="#kontakt-meg">Kontakt meg</a>
   </nav>
 </header>
 
@@ -102,16 +121,29 @@ footer{margin-top:clamp(72px,10vw,120px);border-top:1px solid var(--line);paddin
     <div class="navn">
       <h1>DJ Fax</h1>
       <p class="up">Fredrik Våland</p>
-      <div class="knapper"><a class="knapp fylt" href="#kontakt">Kontakt</a><a class="knapp" href="tel:+4747381194">Ring 473 81 194</a></div>
+      <div class="knapper"><a class="knapp fylt" href="#kontakt-meg">Kontakt meg</a><a class="knapp" href="tel:+4747381194">Ring 473 81 194</a></div>
     </div>
 
-    <div class="blokk">
-      <h2>Om meg</h2>
+  </section>
+
+  <section id="side-om-meg" aria-label="Om meg" hidden>
+    <div class="side">
+      <h1>Om meg</h1>
       <p class="tekst">Jeg jobber som teknisk tegner</p>
+      <img class="sidebilde" src="img/vei.jpg" alt="Vei som forsvinner inn i tåka" loading="lazy" width="1280" height="853">
     </div>
+  </section>
 
-    <div class="blokk">
-      <h2>Bilder</h2>
+  <section id="side-prosjekter" aria-label="Prosjekter" hidden>
+    <div class="side">
+      <h1>Prosjekter</h1>
+      <p class="tekst">testing</p>
+    </div>
+  </section>
+
+  <section id="side-bilder" aria-label="Bilder" hidden>
+    <div class="side">
+      <h1>Bilder</h1>
       <div class="bilder">
         <img class="dj" src="img/dj-fax.jpg" alt="DJ Fax i nissedrakt bak DJ-pulten" loading="lazy" width="1050" height="1400">
         <img src="img/vei.jpg" alt="Vei som forsvinner inn i tåka" loading="lazy" width="1280" height="853">
@@ -119,9 +151,9 @@ footer{margin-top:clamp(72px,10vw,120px);border-top:1px solid var(--line);paddin
     </div>
   </section>
 
-  <section id="side-kontakt" aria-label="Kontakt" hidden>
+  <section id="side-kontakt-meg" aria-label="Kontakt meg" hidden>
     <div class="kontakt">
-      <h1>Kontakt</h1>
+      <h1>Kontakt meg</h1>
       <div class="k-grid">
         <div class="k-info">
           <h2>Fredrik Våland</h2>
@@ -161,9 +193,9 @@ footer{margin-top:clamp(72px,10vw,120px);border-top:1px solid var(--line);paddin
 
 <script>
 (function(){
-  var ids=['forside','kontakt'];
+  var ids=['forside','om-meg','prosjekter','bilder','kontakt-meg'];
   function vis(){
-    var id=location.hash==='#kontakt'?'kontakt':'forside';
+    var id=(location.hash||'#forside').slice(1); if(id==='kontakt') id='kontakt-meg'; if(ids.indexOf(id)<0) id='forside';
     ids.forEach(function(x){document.getElementById('side-'+x).hidden=(x!==id)});
     document.querySelectorAll('.meny a').forEach(function(a){
       if(a.getAttribute('href')==='#'+id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
@@ -174,6 +206,16 @@ footer{margin-top:clamp(72px,10vw,120px);border-top:1px solid var(--line);paddin
   var bar=document.getElementById('bar');
   addEventListener('scroll',function(){bar.classList.toggle('skygge',scrollY>10)},{passive:true});
 
+  var burger=document.getElementById('burger');
+  function lukk(){bar.classList.remove('apen');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Åpne meny');document.body.style.overflow=''}
+  burger.addEventListener('click',function(){
+    var apen=!bar.classList.contains('apen');
+    if(!apen){lukk();return}
+    document.documentElement.style.setProperty('--topp',bar.getBoundingClientRect().bottom+'px');
+    bar.classList.add('apen');burger.setAttribute('aria-expanded','true');burger.setAttribute('aria-label','Lukk meny');document.body.style.overflow='hidden';
+  });
+  document.querySelectorAll('.meny a').forEach(function(a){a.addEventListener('click',lukk)});
+  addEventListener('keydown',function(e){if(e.key==='Escape')lukk()});
   var f=document.getElementById('skjema'), feil=document.getElementById('feil');
   f.addEventListener('submit',function(e){
     e.preventDefault(); feil.textContent='';
