@@ -31,7 +31,7 @@ img{display:block;max-width:100%}
 .fax{position:sticky;top:0;z-index:4;display:flex;align-items:center;gap:22px;padding:10px clamp(16px,4vw,48px);background:var(--papir);color:var(--blekk);font:22px/1 VT323,monospace;white-space:nowrap;overflow:hidden;border-bottom:2px dashed #b9b3a3}
 .fax .mid{flex:1;overflow:hidden;text-overflow:ellipsis;color:#555}
 .fax nav{display:flex;gap:2px;margin-left:auto}
-.fax nav a{font:600 15px/1 "Instrument Sans",sans-serif;text-decoration:none;padding:9px 12px;border-radius:8px;color:#3b3b3b}
+.fax nav a{font:600 15px/1 "Instrument Sans",sans-serif;text-decoration:none;padding:9px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:8px;color:#3b3b3b}
 .fax nav a:hover{background:#e3ddcd}
 .fax nav a[aria-current="page"]{background:var(--blekk);color:var(--papir)}
 .fax nav a:focus-visible,.knapp:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--rod);outline-offset:2px}
@@ -87,6 +87,12 @@ form .knapp{justify-self:start;margin-top:4px}
 footer{padding:26px clamp(16px,4vw,48px);border-top:1px solid #222;color:var(--dus);font:20px/1.2 VT323,monospace;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 
 @media (max-width:1000px){.fax .mid{display:none}}
+@media (min-width:1001px){
+  .hero picture{left:auto;width:min(56%,760px)}
+  .hero img{object-position:50% 30%}
+  .hero::after{background:linear-gradient(90deg,var(--rom) 0 calc(100% - min(56%,760px)),rgba(11,13,12,.85) calc(100% - min(56%,760px) + 2px),rgba(11,13,12,0) 62%,rgba(11,13,12,0) 85%,rgba(11,13,12,.5))}
+  .hero{align-items:center}
+}
 @media (max-width:760px){
   .fax .mid,.fax .avs{display:none}
   .fax{gap:10px;padding:8px 6px}
@@ -124,7 +130,7 @@ footer{padding:26px clamp(16px,4vw,48px);border-top:1px solid #222;color:var(--d
 <main>
   <section id="forside" aria-label="Forside">
     <div class="hero">
-      <picture><source media="(max-width:760px)" srcset="img/dj-fax.jpg"><img src="img/dj-fax-bred.jpg" alt="DJ Fax i nissedrakt bak en julepyntet DJ-pult" width="1600" height="1440"></picture>
+      <picture><img src="img/dj-fax.jpg" alt="DJ Fax i nissedrakt bak en julepyntet DJ-pult" width="1050" height="1400"></picture>
       <div class="hero-inn">
         <h1 class="tittel">DJ <em>Fax</em></h1>
         <div class="under">
