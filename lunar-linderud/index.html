@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lunar Restaurant – Linderud senter, Oslo</title>
+<meta name="description" content="Lunar Restaurant Linderud, Erich Mogensøns vei 38, 0594 Oslo. Sushi og asiatisk laget med kjærlighet. Ring 927 72 499.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#16233f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#16233f; --navy-2:#20325a; --sky:#dfe7f5; --sky-2:#eef3fb; --chili:#d9412b; --chili-2:#e85a43; --ink:#0f1830; --muted:#4f5b72; --line:#c9d4e8;
+  --display:"Unbounded",system-ui,sans-serif; --body:"Figtree",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sky-2);color:var(--ink);font:18px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--chili);outline-offset:3px}
+.demo{background:#000;color:#ddd;font-size:13px;text-align:center;padding:7px 14px}
+.hero{position:relative;min-height:min(86vh,760px);display:flex;flex-direction:column;color:#fff;overflow:hidden;background:var(--navy)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,22,42,.93) 0%,rgba(14,22,42,.8) 40%,rgba(14,22,42,.1) 78%),linear-gradient(0deg,rgba(14,22,42,.6),transparent 40%)}
+.bar{position:relative;z-index:2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:18px clamp(18px,4vw,48px);font-weight:600;font-size:18px}
+.bar a{text-decoration:none}
+.hero-in{position:relative;z-index:2;margin:auto 0;padding:24px clamp(18px,4vw,48px) clamp(60px,10vh,110px);max-width:760px}
+h1{font:800 clamp(54px,9.5vw,118px)/.95 var(--display);margin:0;letter-spacing:-.03em}
+h1 span{display:block;font-size:.36em;font-weight:600;letter-spacing:0;margin-top:14px;color:#ffd2c9}
+.lede{font:500 clamp(22px,2.6vw,30px)/1.35 var(--body);margin:22px 0 0}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:18px;padding:15px 26px;border-radius:999px;transition:background .15s}
+.btn-chili{background:var(--chili);color:#fff}
+.btn-chili:hover{background:var(--chili-2)}
+.btn-line{border:2px solid rgba(255,255,255,.75);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+section{padding:clamp(56px,8vw,100px) clamp(18px,5vw,64px)}
+.wrap{max-width:1180px;margin:0 auto}
+h2{font:800 clamp(32px,4.8vw,52px)/1.05 var(--display);margin:0 0 14px;letter-spacing:-.02em}
+.intro{font-size:20px;color:var(--muted);margin:0 0 34px;max-width:54ch}
+.dishes{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.dish{margin:0;background:var(--sky);border-radius:14px;overflow:hidden}
+.dish img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.dish figcaption{padding:12px 16px 14px;font:600 17px/1.3 var(--display)}
+.menu{background:var(--navy);color:#e9eef8}
+.menu .intro{color:#b9c5dc}
+.tags{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.tags li{border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:9px 18px;font-weight:500;font-size:18px}
+.info .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(30px,6vw,80px);align-items:start}
+.big{font:600 clamp(22px,2.6vw,30px)/1.35 var(--display);margin:0 0 12px}
+.big a{text-decoration:none;border-bottom:3px solid var(--chili)}
+.status{display:inline-block;margin:18px 0 12px;padding:6px 14px;border-radius:999px;font-weight:600;font-size:16px;background:var(--sky)}
+.status.open{background:#d4efdc;color:#15452a}
+.hours{list-style:none;margin:0;padding:0;max-width:400px}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:18px}
+.hours li.today{font-weight:600}
+.map{aspect-ratio:16/11;overflow:hidden;border-radius:14px}
+.map iframe{width:100%;height:100%;border:0;display:block}
+footer{background:var(--ink);color:#b9c5dc;padding:26px clamp(18px,5vw,64px) 30px;font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.sticky{display:none}
+@media(max-width:900px){.dishes{grid-template-columns:1fr 1fr}.dish:first-child{grid-column:span 2}.info .wrap{grid-template-columns:1fr}}
+@media(max-width:600px){
+  .hero::after{background:linear-gradient(0deg,rgba(14,22,42,.95) 0%,rgba(14,22,42,.82) 55%,rgba(14,22,42,.5) 100%)}
+  .hero-in .btns{display:none}
+  .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+  body{padding-bottom:80px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo</div>
+<header class="hero">
+  <img src="img/01.jpg" alt="Retter fra Lunar: sushi, nudler, banh mi og forretter">
+  <div class="bar"><span>Linderud senter, Oslo</span><a href="tel:+4792772499">927 72 499</a></div>
+  <div class="hero-in">
+    <h1>Lunar<span>Restaurant Linderud</span></h1>
+    <p class="lede">Sushi og asiatisk laget med kjærlighet.</p>
+    <div class="btns">
+      <a class="btn btn-chili" href="tel:+4792772499">Ring og bestill</a>
+      <a class="btn btn-line" href="#finn">Åpningstider</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Noen av rettene</h2>
+    <p class="intro">Fra forrettmenyen.</p>
+    <div class="dishes">
+      <figure class="dish"><img src="img/06.jpg" alt="Dumplings" loading="lazy"><figcaption>Dumplings</figcaption></figure>
+      <figure class="dish"><img src="img/05.jpg" alt="Tempura Salat" loading="lazy"><figcaption>Tempura Salat</figcaption></figure>
+      <figure class="dish"><img src="img/04.jpg" alt="Fritert Wonton" loading="lazy"><figcaption>Fritert Wonton</figcaption></figure>
+      <figure class="dish"><img src="img/02.jpg" alt="Innbakt Scampi" loading="lazy"><figcaption>Innbakt Scampi</figcaption></figure>
+      <figure class="dish"><img src="img/03.jpg" alt="Vårruller" loading="lazy"><figcaption>Vårruller</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="wrap">
+    <h2>På menyen</h2>
+    <p class="intro">Spis på stedet eller ta med hjem.</p>
+    <ul class="tags">
+      <li>Forretter</li><li>Sushimeny</li><li>Combo Mix Meny</li><li>Sashimi</li><li>Maki</li><li>Futo Maki / Crunchy Roll</li><li>Nigiri</li><li>Banh Mi</li><li>Varm Mat / Spesial Retter</li>
+    </ul>
+  </div>
+</section>
+
+<section class="info" id="finn">
+  <div class="wrap">
+    <div>
+      <h2>Finn oss</h2>
+      <p class="big">Erich Mogensøns vei 38<br>0594 Oslo</p>
+      <p class="big"><a href="tel:+4792772499">927 72 499</a></p>
+      <p class="status" id="status">Åpningstider</p>
+      <ul class="hours" id="hours">
+        <li data-d="1"><span>Mandag</span><span>10:00–21:00</span></li>
+        <li data-d="2"><span>Tirsdag</span><span>10:00–21:00</span></li>
+        <li data-d="3"><span>Onsdag</span><span>10:00–21:00</span></li>
+        <li data-d="4"><span>Torsdag</span><span>10:00–21:00</span></li>
+        <li data-d="5"><span>Fredag</span><span>10:00–21:00</span></li>
+        <li data-d="6"><span>Lørdag</span><span>10:00–19:00</span></li>
+        <li data-d="0"><span>Søndag</span><span>Stengt</span></li>
+      </ul>
+    </div>
+    <div class="map"><iframe title="Kart: Erich Mogensøns vei 38, Oslo" loading="lazy" src="https://www.google.com/maps?q=Erich+Mogens%C3%B8ns+vei+38,+0594+Oslo&output=embed"></iframe></div>
+  </div>
+</section>
+
+<footer><span>Lunar Restaurant · Erich Mogensøns vei 38, 0594 Oslo</span><span>Lunar Take-Away AS · org.nr. 929 276 523</span></footer>
+<a class="btn btn-chili sticky" href="tel:+4792772499">Ring og bestill · 927 72 499</a>
+<script>
+(function(){
+  var t={1:[10,21],2:[10,21],3:[10,21],4:[10,21],5:[10,21],6:[10,19],0:null};
+  var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Oslo',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  var g=function(k){for(var i=0;i<p.length;i++)if(p[i].type===k)return p[i].value};
+  var d={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}[g('weekday')],h=+g('hour')+(+g('minute'))/60;
+  var li=document.querySelector('#hours li[data-d="'+d+'"]'); if(li) li.className='today';
+  var a=t[d],open=!!(a&&h>=a[0]&&h<a[1]);
+  var s=document.getElementById('status'); s.textContent=open?'Åpent nå':'Stengt nå'; if(open) s.className='status open';
+})();
+</script>
+</body>
+</html>
