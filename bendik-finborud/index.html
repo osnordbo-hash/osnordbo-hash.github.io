@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Bendik Finborud</title>
+<meta name="description" content="Bendik Finborud – folk pop singer-songwriter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14110d;--ink2:#1d1914;--paper:#efe7d8;--muted:#c9bda8;--ochre:#d29a3a;--umber:#5a3a22}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--paper);font:500 18px/1.65 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.demo{background:#000;color:#cfc6b6;font-size:13px;text-align:center;padding:7px 14px}
+nav{position:absolute;top:34px;left:0;right:0;z-index:3;display:flex;justify-content:flex-end;gap:26px;padding:16px clamp(20px,5vw,64px);font-weight:600;font-size:15px}
+nav a{text-decoration:none;color:var(--paper);opacity:.92}
+nav a:hover{color:var(--ochre)}
+.hero{position:relative;min-height:min(92vh,820px);display:flex;align-items:flex-end;background:#2a2a2a url(img/hero.jpg) 72% center/cover no-repeat;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,10,.88) 0%,rgba(14,12,10,.62) 38%,rgba(14,12,10,0) 62%),linear-gradient(0deg,rgba(14,12,10,.85) 0%,rgba(14,12,10,0) 45%)}
+.hero-in{position:relative;z-index:2;padding:0 clamp(20px,5vw,64px) clamp(44px,8vh,90px);max-width:760px}
+h1{font:500 clamp(58px,10vw,132px)/.9 "Fraunces",Georgia,serif;letter-spacing:-.01em;color:#fff}
+.tag{margin-top:18px;font-size:clamp(19px,2.2vw,22px);font-weight:600;color:#f3ead9;max-width:30ch}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:700;font-size:18px;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--ochre);color:#1a1208}
+.btn-ghost{border:2px solid rgba(239,231,216,.7);color:#fff}
+section{padding:clamp(70px,10vw,130px) clamp(20px,5vw,64px)}
+.wrap{max-width:1100px;margin:0 auto}
+.about{max-width:820px}
+.about img{width:100%;aspect-ratio:1;object-fit:cover;filter:grayscale(1) contrast(1.05);border-radius:4px}
+.lead{font:500 clamp(30px,4.2vw,52px)/1.15 "Fraunces",Georgia,serif;color:#fff}
+.lead em{color:var(--ochre)}
+.about p+p{margin-top:28px;max-width:60ch;color:var(--muted)}
+h2{font:500 clamp(40px,5vw,60px)/1 "Fraunces",Georgia,serif;margin-bottom:34px;color:#fff}
+.listen{background:var(--ink2)}
+.listen iframe{width:100%;height:452px;border:0;border-radius:12px;display:block}
+.rel{display:grid;grid-template-columns:repeat(3,1fr);gap:36px 26px}
+.rel a{text-decoration:none;display:block}
+.rel img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:3px;transition:transform .25s}
+.rel a:hover img{transform:scale(1.03)}
+.rel b{display:block;margin-top:12px;font-weight:700;font-size:17px;color:#fff}
+.rel span{color:var(--muted);font-size:15px}
+.contact{background:#33221a}
+.contact .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:36px;align-items:flex-end}
+.contact h2{margin-bottom:14px}
+.contact p{color:#eadfcb;max-width:34ch}
+.mail{font:500 clamp(26px,3.4vw,40px)/1.1 "Fraunces",Georgia,serif;color:#fff;text-decoration-color:var(--ochre);text-underline-offset:6px;word-break:break-all}
+.social{display:flex;gap:22px;margin-top:20px;font-weight:700}
+.social a{text-decoration:none;border-bottom:2px solid var(--ochre);padding-bottom:2px}
+footer{padding:28px clamp(20px,5vw,64px);color:var(--muted);font-size:14px;text-align:center}
+.bar{display:none}
+@media (max-width:760px){
+ nav{gap:18px;font-size:14px;justify-content:center}
+ .hero{background-position:78% center;min-height:88vh}
+ .hero::before{background:linear-gradient(0deg,rgba(14,12,10,.94) 0%,rgba(14,12,10,.7) 40%,rgba(14,12,10,.1) 75%)}
+ .rel{grid-template-columns:repeat(2,1fr);gap:26px 16px}
+ .listen iframe{height:380px}
+ .bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(20,17,13,.96);border-top:1px solid #3a3128}
+ .bar a{flex:1;text-align:center;padding:12px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none}
+ body{padding-bottom:72px}
+}
+</style>
+</head>
+<body>
+<div class="demo">Demo</div>
+<nav><a href="#listen">Listen</a><a href="#releases">Releases</a><a href="#contact">Contact</a></nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <h1>Bendik<br>Finborud</h1>
+    <p class="tag">Folk pop · Singer-songwriter</p>
+    <div class="cta">
+      <a class="btn btn-main" href="https://open.spotify.com/artist/0d1PtxYGqzU77E3HkEbN0Y" target="_blank" rel="noopener">Listen on Spotify</a>
+      <a class="btn btn-ghost" href="#contact">Booking</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap about">
+    <div>
+      <p class="lead">“Mixing melancholic folk pop with chilling lyrics about life as a love-craving, grief-riddled young Norwegian.”</p>
+      <p>Bendik Finborud was born in 1995 in Voss, a small town in the western part of Norway. Finding inspiration in nordic folk and folk-pop artists of the time, he soon gravitated towards songwriting. In 2018 he was among the first group in Norway to get a bachelors degree in songwriting, and in 2019 released his first singles.</p>
+    </div>
+  </div>
+</section>
+
+<section class="listen" id="listen">
+  <div class="wrap">
+    <h2>Listen</h2>
+    <iframe src="https://open.spotify.com/embed/artist/0d1PtxYGqzU77E3HkEbN0Y?utm_source=generator&amp;theme=0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Bendik Finborud på Spotify"></iframe>
+  </div>
+</section>
+
+<section id="releases">
+  <div class="wrap">
+    <h2>Releases</h2>
+    <div class="rel">
+      <a href="https://open.spotify.com/album/40wTRZjXwHvUhOhJytjOBn" target="_blank" rel="noopener"><img src="img/tears-laughter.jpg" alt="Tears &amp; Laughter" ><b>Tears &amp; Laughter</b><span>Album · 2022</span></a>
+      <a href="https://open.spotify.com/album/2lJb3Fdewi174ZDpXfjTDC" target="_blank" rel="noopener"><img src="img/nowhere-to-be.jpg" alt="Nowhere to Be" ><b>Nowhere to Be</b><span>2020</span></a>
+      <a href="https://open.spotify.com/album/2nh9kg3O3F0FzmV6OMiEWg" target="_blank" rel="noopener"><img src="img/no-one-compares.jpg" alt="No One Compares" ><b>No One Compares</b><span>Single · 2020</span></a>
+      <a href="https://open.spotify.com/album/7jqsgHfaxMX1boZSexfaVg" target="_blank" rel="noopener"><img src="img/bargaining.jpg" alt="Bargaining" ><b>Bargaining</b><span>Single · 2020</span></a>
+      <a href="https://open.spotify.com/album/5TAgcuJJKbPfwZjPAG9Iju" target="_blank" rel="noopener"><img src="img/rebel-rebel.jpg" alt="Rebel, Rebel" ><b>Rebel, Rebel</b><span>EP · 2019</span></a>
+      <a href="https://open.spotify.com/album/37AHGCh8WUcj4x2K5bQIvt" target="_blank" rel="noopener"><img src="img/this-time-its-goodbye.jpg" alt="This Time It's Goodbye" ><b>This Time It's Goodbye</b><span>2019</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <h2>Booking &amp; contact</h2>
+      <a class="mail" href="mailto:benfin95@gmail.com">benfin95@gmail.com</a>
+    </div>
+    <div class="social">
+      <a href="https://open.spotify.com/artist/0d1PtxYGqzU77E3HkEbN0Y" target="_blank" rel="noopener">Spotify</a>
+      <a href="https://instagram.com/bendikfinborud" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com/bendikfinborudmusikk" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>© Bendik Finborud</footer>
+
+<div class="bar"><a class="btn-main" href="https://open.spotify.com/artist/0d1PtxYGqzU77E3HkEbN0Y" target="_blank" rel="noopener">Listen</a><a class="btn-ghost" href="#contact" style="border:2px solid #6b5d4c;color:#fff">Booking</a></div>
+</body>
+</html>
